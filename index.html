@@ -329,12 +329,16 @@
     border: 1px solid rgba(148, 163, 184, 0.4);
     color: var(--text-sub);
   }
-
+.carousel-track {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
   /* 공통 섹션 */
   .section {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 20px 40px 20px;
+    scroll-margin-top: 90px;
   }
 
   .section + .section {
@@ -823,6 +827,83 @@
       white-space: nowrap;
     }
   }
+  /* =======================
+      PROJECT CAROUSEL
+======================= */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 40px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.carousel-item-wrapper {
+  flex: 0 0 360px;
+  transition: transform 0.35s ease, opacity 0.35s ease, z-index 0.35s ease;
+  position: relative;
+}
+
+/* scale 단계 */
+.carousel-item-wrapper.inactive-2 {
+  transform: scale(0.68);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.carousel-item-wrapper.inactive-1 {
+  transform: scale(0.8);
+  opacity: 0.6;
+  z-index: 5;
+}
+
+.carousel-item-wrapper.active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 20;
+  transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.carousel-btn.prev {
+  left: -2px;
+}
+
+.carousel-btn.next {
+  right: -2px;
+}
+
+@media (max-width: 640px) {
+  .carousel-item-wrapper {
+    flex: 0 0 80%;
+  }
+}
+
 </style>
 
 </head>
@@ -861,7 +942,7 @@
           </div>
 <div>
   <h1 class="hero-title">
-    도전을 두려워하지 않는<br />
+    도전이 두렵지 않은<br />
     백엔드 개발자 <span>김동하</span>입니다.
   </h1>
   <br>
@@ -1068,133 +1149,142 @@
     <p class="section-caption">주요 경험 프로젝트</p>
   </div>
 
-  <div class="projects-grid">
-    <!-- 중고워씽 -->
-    <article class="project-card" data-project="used-auction">
-      <div class="project-tag">실시간 경매 · 동시성 제어</div>
+  <!-- Carousel -->
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev">‹</button>
+    <button class="carousel-btn next">›</button>
 
-      <h3 class="project-title">중고워씽 – 경매 기반 중고거래 플랫폼</h3>
+    <div class="carousel-track">
 
-      <div class="project-meta">
-        <span>2024.09 ~ 2024.12</span>
-        <span>4명 (AI 1, FE 1, BE 2)</span>
-        <span>기여도 50%</span>
+      <!-- 중고워씽 -->
+      <div class="carousel-item-wrapper">
+        <article class="project-card" data-project="used-auction">
+          <div class="project-tag">실시간 경매 · 동시성 제어</div>
+
+          <h3 class="project-title">중고워씽 – 경매 기반 중고거래 플랫폼</h3>
+
+          <div class="project-meta">
+            <span>2024.09 ~ 2024.12</span>
+            <span>4명 (AI 1, FE 1, BE 2)</span>
+            <span>기여도 50%</span>
+          </div>
+
+          <p class="project-role">
+            역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
+          </p>
+
+          <ul class="project-list number">
+            <li>입찰·낙찰·경매 종료·채팅을 RESTful API로 설계하고 Swagger로 문서화.</li>
+            <li>Redis 분산 락으로 동시 입찰 순서를 직렬화해 잘못된 낙찰·금액 덮어쓰기 문제 제거.</li>
+            <li>WebSocket + Redis Pub/Sub 구조로 입찰 현황·채팅을 실시간 브로드캐스트.</li>
+          </ul>
+
+          <p class="project-tech">
+            <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
+          </p>
+
+          <div class="project-more-link">자세히 보기 <span>↗</span></div>
+        </article>
       </div>
 
-      <p class="project-role">
-        역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
-      </p>
+      <!-- Gradu-Inha -->
+      <div class="carousel-item-wrapper">
+        <article class="project-card" data-project="gradu-inha">
+          <div class="project-tag">하이브리드 DB · 졸업 요건 검증</div>
 
-      <ul class="project-list">
-        <li>입찰·낙찰·경매 종료·채팅을 RESTful API로 설계하고 Swagger로 문서화.</li>
-        <li>Redis 분산 락으로 동시 입찰 순서를 직렬화해 잘못된 낙찰·금액 덮어쓰기 문제 제거.</li>
-        <li>WebSocket + Redis Pub/Sub 구조로 입찰 현황·채팅을 실시간 브로드캐스트.</li>
-      </ul>
+          <h3 class="project-title">Gradu-Inha – 졸업 요건 검사 사이트</h3>
 
-      <p class="project-tech">
-        <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
-      </p>
+          <div class="project-meta">
+            <span>2024.09 ~ 2025.03</span>
+            <span>5명 (DESIGN 1, FE 2, BE 2)</span>
+            <span>기여도 60%</span>
+          </div>
 
-      <div class="project-more-link">
-        자세히 보기 <span>↗</span>
-      </div>
-    </article>
+          <p class="project-role">
+            역할: 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)
+          </p>
 
-    <!-- Gradu-Inha -->
-    <article class="project-card" data-project="gradu-inha">
-      <div class="project-tag">하이브리드 DB · 졸업 요건 검증</div>
+          <ul class="project-list number">
+            <li>학생·과목·수강이력은 MySQL 정규화, 졸업 요건은 MongoDB로 설계한 하이브리드 구조.</li>
+            <li>학과/학번별 검증 규칙을 전략 패턴으로 분리해 신규 요건 추가 시 코드 수정 최소화.</li>
+            <li>GlobalExceptionHandler + 공통 ApiResponse로 예외 처리·응답 포맷 일원화.</li>
+          </ul>
 
-      <h3 class="project-title">Gradu-Inha – 졸업 요건 검사 사이트</h3>
+          <p class="project-tech">
+            <strong>Tech.</strong> Java, Spring Boot, MySQL, MongoDB, Docker, Swagger
+          </p>
 
-      <div class="project-meta">
-        <span>2024.09 ~ 2025.03</span>
-        <span>5명 (DESIGN 1, FE 2, BE 2)</span>
-        <span>기여도 60%</span>
-      </div>
-
-      <p class="project-role">
-        역할: 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)
-      </p>
-
-      <ul class="project-list">
-        <li>학생·과목·수강이력은 MySQL 정규화, 졸업 요건은 MongoDB로 설계한 하이브리드 구조.</li>
-        <li>학과/학번별 검증 규칙을 전략 패턴으로 분리해 신규 요건 추가 시 코드 수정 최소화.</li>
-        <li>GlobalExceptionHandler + 공통 ApiResponse로 예외 처리·응답 포맷 일원화.</li>
-      </ul>
-
-      <p class="project-tech">
-        <strong>Tech.</strong> Java, Spring Boot, MySQL, MongoDB, Docker, Swagger
-      </p>
-
-      <div class="project-more-link">
-        자세히 보기 <span>↗</span>
-      </div>
-    </article>
-
-    <!-- Pitch-it -->
-    <article class="project-card" data-project="pitch-it">
-      <div class="project-tag">화상회의 · AI 발표 리포트</div>
-
-      <h3 class="project-title">Pitch-it – 실시간 화상회의 플랫폼</h3>
-
-      <div class="project-meta">
-        <span>2025.07 ~ 2025.08</span>
-        <span>6명 (AI 1, FE 2, BE 3)</span>
-        <span>기여도 60%</span>
+          <div class="project-more-link">자세히 보기 <span>↗</span></div>
+        </article>
       </div>
 
-      <p class="project-role">
-        역할: 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API) 및 인프라 구축
-      </p>
+      <!-- Pitch-it -->
+      <div class="carousel-item-wrapper">
+        <article class="project-card" data-project="pitch-it">
+          <div class="project-tag">화상회의 · AI 발표 리포트</div>
 
-      <ul class="project-list">
-        <li>예약 → 회의실 생성 → 참가자 관리 → 리포트 생성까지 도메인 모델·플로우 설계.</li>
-        <li>예약 시간 10분 전 자동 회의실 개설·초대 링크 발송, WebRTC + STOMP 기반 실시간 통신.</li>
-        <li>Whisper STT + GPT-4o로 발표 내용·말 습관·속도를 분석하는 자동 발표 리포트 구현.</li>
-      </ul>
+          <h3 class="project-title">Pitch-it – 실시간 화상회의 플랫폼</h3>
 
-      <p class="project-tech">
-        <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
-        Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
-      </p>
+          <div class="project-meta">
+            <span>2025.07 ~ 2025.08</span>
+            <span>6명 (AI 1, FE 2, BE 3)</span>
+            <span>기여도 60%</span>
+          </div>
 
-      <div class="project-more-link">
-        자세히 보기 <span>↗</span>
+          <p class="project-role">
+            역할: 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API) 및 인프라 구축
+          </p>
+
+          <ul class="project-list number">
+            <li>예약 → 회의실 생성 → 참가자 관리 → 리포트 생성까지 도메인 모델·플로우 설계.</li>
+            <li>예약 시간 10분 전 자동 회의실 개설·초대 링크 발송, WebRTC + STOMP 기반 실시간 통신.</li>
+            <li>Whisper STT + GPT-4o로 발표 내용·말 습관·속도를 분석하는 자동 발표 리포트 구현.</li>
+          </ul>
+
+          <p class="project-tech">
+            <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
+            Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
+          </p>
+
+          <div class="project-more-link">자세히 보기 <span>↗</span></div>
+        </article>
       </div>
-    </article>
 
-    <!-- YALDI -->
-    <article class="project-card" data-project="yaldi">
-      <div class="project-tag">실시간 협업 · 버전 관리</div>
+      <!-- YALDI -->
+      <div class="carousel-item-wrapper">
+        <article class="project-card" data-project="yaldi">
+          <div class="project-tag">실시간 협업 · 버전 관리</div>
 
-      <h3 class="project-title">YALDI – 실시간 ERD 협업 설계 툴</h3>
+          <h3 class="project-title">YALDI – 실시간 ERD 협업 설계 툴</h3>
 
-      <div class="project-meta">
-        <span>2025.10 ~ 2025.11</span>
-        <span>4명 (AI 1, FE 2, BE 3)</span>
-        <span>기여도 30%</span>
+          <div class="project-meta">
+            <span>2025.10 ~ 2025.11</span>
+            <span>4명 (AI 1, FE 2, BE 3)</span>
+            <span>기여도 30%</span>
+          </div>
+
+          <p class="project-role">
+            역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
+          </p>
+
+          <ul class="project-list number">
+            <li>Project·Version·Table·Column·Relation·Comment·Notification·AsyncJob 등 도메인 모델링.</li>
+            <li>PostgreSQL ENUM·트리거·제약 조건으로 버전·편집 이력·실제 데이터 일관성 유지.</li>
+            <li>WebSocket(STOMP) + Redis Pub/Sub + Kafka·SSE로 실시간 협업·알림·비동기 작업 처리.</li>
+          </ul>
+
+          <p class="project-tech">
+            <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
+          </p>
+
+          <div class="project-more-link">자세히 보기 <span>↗</span></div>
+        </article>
       </div>
 
-      <p class="project-role">
-        역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
-      </p>
-
-      <ul class="project-list">
-        <li>Project·Version·Table·Column·Relation·Comment·Notification·AsyncJob 등 도메인 모델링.</li>
-        <li>PostgreSQL ENUM·트리거·제약 조건으로 버전·편집 이력·실제 데이터 일관성 유지.</li>
-        <li>WebSocket(STOMP) + Redis Pub/Sub + Kafka·SSE로 실시간 협업·알림·비동기 작업 처리.</li>
-      </ul>
-
-      <p class="project-tech">
-        <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
-      </p>
-
-      <div class="project-more-link">
-        자세히 보기 <span>↗</span>
-      </div>
-    </article>
+    </div>
   </div>
 </section>
+
 
 <!-- 프로젝트 상세 보기 모달 -->
 <div id="project-detail" class="project-detail">
@@ -1820,6 +1910,106 @@ result: {
       });
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  let items = Array.from(document.querySelectorAll(".carousel-item-wrapper"));
+  const btnPrev = document.querySelector(".carousel-btn.prev");
+  const btnNext = document.querySelector(".carousel-btn.next");
+
+  if (!track || items.length === 0) return;
+
+  const container = document.querySelector(".carousel-wrapper");
+
+  const cardWidth = items[0].offsetWidth + 24;
+  const visibleWidth = container.offsetWidth;
+  const centerOffset = (visibleWidth / 2) - (cardWidth / 2);
+
+  // Clones for loop
+  const firstClone = items[0].cloneNode(true);
+  const lastClone = items[items.length - 1].cloneNode(true);
+
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, items[0]);
+
+  items = Array.from(document.querySelectorAll(".carousel-item-wrapper"));
+
+  let current = 1; // because of the front clone
+
+  function translateTo(index, withTransition = true) {
+    if (withTransition) track.style.transition = "transform 0.35s ease";
+    else track.style.transition = "none";
+
+    const x = -(index * cardWidth) + centerOffset;
+
+    track.style.transform = `translateX(${x}px)`;
+  }
+
+  // Initial position
+  translateTo(current, false);
+
+  // Scale updates
+  function updateClasses() {
+    items.forEach((item, i) => {
+      item.classList.remove("active", "inactive-1", "inactive-2");
+
+      if (i === current) item.classList.add("active");
+      else if (Math.abs(i - current) === 1) item.classList.add("inactive-1");
+      else item.classList.add("inactive-2");
+    });
+  }
+
+  updateClasses();
+
+  // Move logic
+  function moveNext() {
+    current++;
+    translateTo(current);
+  }
+
+  function movePrev() {
+    current--;
+    translateTo(current);
+  }
+
+track.addEventListener("transitionend", () => {
+  // 오른쪽으로 넘어가서 클론에 왔을 때
+  if (items[current].classList.contains("clone") && current === items.length - 1) {
+    current = 1;
+    // transition 끄고 순간이동
+    track.style.transition = "none";
+    translateTo(current, false);
+
+    // 다음 프레임에서 transition 다시 활성화
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition = "transform 0.35s ease";
+      });
+    });
+  }
+
+  // 왼쪽으로 넘어가서 클론에 왔을 때
+  else if (items[current].classList.contains("clone") && current === 0) {
+    current = items.length - 2;
+    track.style.transition = "none";
+    translateTo(current, false);
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition = "transform 0.35s ease";
+      });
+    });
+  }
+
+  updateClasses();
+});
+
+  btnNext.addEventListener("click", moveNext);
+  btnPrev.addEventListener("click", movePrev);
+});
 </script>
 
 </body>
