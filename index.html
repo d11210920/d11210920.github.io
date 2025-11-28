@@ -273,13 +273,14 @@
     gap: 14px;
   }
 
-  .side-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    margin-bottom: 10px;
-  }
+.side-header {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 30px;
+  align-items: center;
+  gap: 80px; /* ← 너가 원하는 "둘 사이 거리" 여기서 조절됨! */
+}
+
 
   .side-name {
     font-weight: 600;
@@ -314,12 +315,13 @@
     font-weight: 500;
   }
 
-  .side-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 4px;
-  }
+.side-badges {
+  display: flex;
+  flex-direction: column; /* 한 줄씩 세로 정렬 */
+  gap: 6px; /* 간격 */
+  margin-top: 8px;
+}
+
 
   .side-badge {
     font-size: 11px;
@@ -701,6 +703,42 @@
   .detail-section li {
     margin-bottom: 3px;
   }
+.detail-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* 버튼 스타일 */
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  background: rgba(15, 23, 42, 0.75);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 50%;
+
+  cursor: pointer;
+  z-index: 999;
+
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* 자연스러운 좌우 배치 */
+.detail-nav.prev { left: 32px; }
+.detail-nav.next { right: 32px; }
+
+.detail-nav:hover {
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-50%) scale(1.08);
+}
+
 
   .detail-image {
     margin: 10px 0;
@@ -992,8 +1030,10 @@
       <div class="side-role">Backend Developer</div>
     </div>
     <div class="side-badges">
-      <span class="side-badge">SSAFY 13기 (Java)</span>
       <span class="side-badge">인하대 컴퓨터공학과</span>
+      <span class="side-badge">전체학점: 4.42 / 4.5</span>
+      <span class="side-badge">전공학점: 4.37 / 4.5</span>
+      <span class="side-badge">SSAFY 13기 (Java)</span>
     </div>
   </div>
 
@@ -1111,22 +1151,22 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-header">
-              <div class="timeline-title">삼성 청년 SW 아카데미 13기 (SSAFY)</div>
-              <div class="timeline-period">2025.01 ~ 재학 중</div>
-            </div>
-            <div class="timeline-sub">
-              자바 트랙에서 알고리즘·웹·백엔드 심화 학습 및 팀 프로젝트 진행,
-              실전형 서비스 개발 경험 축적.
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-header">
               <div class="timeline-title">인하대학교 컴퓨터공학과</div>
               <div class="timeline-period">2019.03 ~ 2025.02</div>
             </div>
             <div class="timeline-sub">
               자료구조·네트워크·데이터베이스 등 CS 전반과 팀 프로젝트를 통해 백엔드
               역량 기반 형성.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">삼성 청년 SW 아카데미 13기 (SSAFY)</div>
+              <div class="timeline-period">2025.01 ~ 재학 중</div>
+            </div>
+            <div class="timeline-sub">
+              자바 트랙에서 알고리즘·웹·백엔드 심화 학습 및 팀 프로젝트 진행,
+              실전형 서비스 개발 경험 축적.
             </div>
           </div>
           <div class="timeline-item">
@@ -1165,7 +1205,7 @@
 
     <div class="project-meta">
       <span>2025.10 ~ 2025.11</span>
-      <span>4명 (AI 1, FE 2, BE 3)</span>
+      <span>6명 (AI 1, FE 2, BE 3)</span>
       <span>기여도 30%</span>
     </div>
 
@@ -1289,11 +1329,13 @@
 
 <!-- 프로젝트 상세 보기 모달 -->
 <div id="project-detail" class="project-detail">
+  <button class="detail-nav prev" onclick="openPrevProject()">&lt;</button>
+<button class="detail-nav next" onclick="openNextProject()">&gt;</button>
+
   <div class="project-detail-backdrop" onclick="closeProjectDetail()"></div>
 
   <div class="project-detail-panel">
     <button class="detail-close" type="button" onclick="closeProjectDetail()">✕</button>
-
 <!-- 왼쪽 목차 -->
 <aside class="project-detail-sidebar">
   <div class="sidebar-title">목차</div>
@@ -1833,6 +1875,18 @@ result: {
       },
     },
   };
+const PROJECT_ORDER = ["yaldi", "pitch-it", "gradu-inha", "used-auction"];
+function openNextProject() {
+  const idx = PROJECT_ORDER.indexOf(currentProjectKey);
+  const next = (idx + 1) % PROJECT_ORDER.length;
+  openProjectDetail(PROJECT_ORDER[next]);
+}
+
+function openPrevProject() {
+  const idx = PROJECT_ORDER.indexOf(currentProjectKey);
+  const prev = (idx - 1 + PROJECT_ORDER.length) % PROJECT_ORDER.length;
+  openProjectDetail(PROJECT_ORDER[prev]);
+}
 
   function renderProjectDetail(key) {
     const data = PROJECTS[key];
@@ -1866,23 +1920,22 @@ result: {
     setActiveSidebar('overview');
   }
 
-  function setActiveSidebar(sectionKey) {
-    document.querySelectorAll('.sidebar-nav button').forEach((btn) => {
-      btn.classList.toggle('active', btn.dataset.section === sectionKey);
-    });
-    const target = document.querySelector(
-      `.detail-section[data-section-key="${sectionKey}"]`
-    );
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
+function setActiveSidebar(sectionKey) {
+  document.querySelectorAll('.sidebar-nav button').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.section === sectionKey);
+  });
 
-  function openProjectDetail(key) {
-    renderProjectDetail(key);
-    document.getElementById('project-detail').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+  const content = document.querySelector('.project-detail-content');
+  content.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openProjectDetail(key) {
+  currentProjectKey = key; // ⭐ 현재 열려있는 프로젝트 저장
+  renderProjectDetail(key);
+  document.getElementById('project-detail').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
 
   function closeProjectDetail() {
     document.getElementById('project-detail').classList.remove('open');
