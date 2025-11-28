@@ -1156,130 +1156,131 @@
 
     <div class="carousel-track">
 
-      <!-- 중고워씽 -->
-      <div class="carousel-item-wrapper">
-        <article class="project-card" data-project="used-auction">
-          <div class="project-tag">실시간 경매 · 동시성 제어</div>
+<!-- YALDI -->
+<div class="carousel-item-wrapper">
+  <article class="project-card" data-project="yaldi">
+    <div class="project-tag">실시간 협업 · 버전 관리</div>
 
-          <h3 class="project-title">중고워씽 – 경매 기반 중고거래 플랫폼</h3>
+    <h3 class="project-title">YALDI – 실시간 ERD 협업 설계 툴</h3>
 
-          <div class="project-meta">
-            <span>2024.09 ~ 2024.12</span>
-            <span>4명 (AI 1, FE 1, BE 2)</span>
-            <span>기여도 50%</span>
-          </div>
+    <div class="project-meta">
+      <span>2025.10 ~ 2025.11</span>
+      <span>4명 (AI 1, FE 2, BE 3)</span>
+      <span>기여도 30%</span>
+    </div>
 
-          <p class="project-role">
-            역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
-          </p>
+    <p class="project-role">
+      역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
+    </p>
 
-          <ul class="project-list number">
-            <li>입찰·낙찰·경매 종료·채팅을 RESTful API로 설계하고 Swagger로 문서화.</li>
-            <li>Redis 분산 락으로 동시 입찰 순서를 직렬화해 잘못된 낙찰·금액 덮어쓰기 문제 제거.</li>
-            <li>WebSocket + Redis Pub/Sub 구조로 입찰 현황·채팅을 실시간 브로드캐스트.</li>
-          </ul>
+    <ul class="project-list number">
+      <li>Project·Version·Table·Column·Relation·Comment·Notification·AsyncJob 등 도메인 모델링.</li>
+      <li>PostgreSQL ENUM·트리거·제약 조건으로 버전·편집 이력·실제 데이터 일관성 유지.</li>
+      <li>WebSocket(STOMP) + Redis Pub/Sub + Kafka·SSE로 실시간 협업·알림·비동기 작업 처리.</li>
+    </ul>
 
-          <p class="project-tech">
-            <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
-          </p>
+    <p class="project-tech">
+      <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
+    </p>
 
-          <div class="project-more-link">자세히 보기 <span>↗</span></div>
-        </article>
-      </div>
+    <div class="project-more-link">자세히 보기 <span>↗</span></div>
+  </article>
+</div>
 
-      <!-- Gradu-Inha -->
-      <div class="carousel-item-wrapper">
-        <article class="project-card" data-project="gradu-inha">
-          <div class="project-tag">하이브리드 DB · 졸업 요건 검증</div>
+<!-- Pitch-it -->
+<div class="carousel-item-wrapper">
+  <article class="project-card" data-project="pitch-it">
+    <div class="project-tag">화상회의 · AI 발표 리포트</div>
 
-          <h3 class="project-title">Gradu-Inha – 졸업 요건 검사 사이트</h3>
+    <h3 class="project-title">Pitch-it – 실시간 화상회의 플랫폼</h3>
 
-          <div class="project-meta">
-            <span>2024.09 ~ 2025.03</span>
-            <span>5명 (DESIGN 1, FE 2, BE 2)</span>
-            <span>기여도 60%</span>
-          </div>
+    <div class="project-meta">
+      <span>2025.07 ~ 2025.08</span>
+      <span>6명 (AI 1, FE 2, BE 3)</span>
+      <span>기여도 60%</span>
+    </div>
 
-          <p class="project-role">
-            역할: 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)
-          </p>
+    <p class="project-role">
+      역할: 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API) 및 인프라 구축
+    </p>
 
-          <ul class="project-list number">
-            <li>학생·과목·수강이력은 MySQL 정규화, 졸업 요건은 MongoDB로 설계한 하이브리드 구조.</li>
-            <li>학과/학번별 검증 규칙을 전략 패턴으로 분리해 신규 요건 추가 시 코드 수정 최소화.</li>
-            <li>GlobalExceptionHandler + 공통 ApiResponse로 예외 처리·응답 포맷 일원화.</li>
-          </ul>
+    <ul class="project-list number">
+      <li>예약 → 회의실 생성 → 참가자 관리 → 리포트 생성까지 도메인 모델·플로우 설계.</li>
+      <li>예약 시간 10분 전 자동 회의실 개설·초대 링크 발송, WebRTC + STOMP 기반 실시간 통신.</li>
+      <li>Whisper STT + GPT-4o로 발표 내용·말 습관·속도를 분석하는 자동 발표 리포트 구현.</li>
+    </ul>
 
-          <p class="project-tech">
-            <strong>Tech.</strong> Java, Spring Boot, MySQL, MongoDB, Docker, Swagger
-          </p>
+    <p class="project-tech">
+      <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
+      Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
+    </p>
 
-          <div class="project-more-link">자세히 보기 <span>↗</span></div>
-        </article>
-      </div>
+    <div class="project-more-link">자세히 보기 <span>↗</span></div>
+  </article>
+</div>
 
-      <!-- Pitch-it -->
-      <div class="carousel-item-wrapper">
-        <article class="project-card" data-project="pitch-it">
-          <div class="project-tag">화상회의 · AI 발표 리포트</div>
+<!-- Gradu-Inha -->
+<div class="carousel-item-wrapper">
+  <article class="project-card" data-project="gradu-inha">
+    <div class="project-tag">하이브리드 DB · 졸업 요건 검증</div>
 
-          <h3 class="project-title">Pitch-it – 실시간 화상회의 플랫폼</h3>
+    <h3 class="project-title">Gradu-Inha – 졸업 요건 검사 사이트</h3>
 
-          <div class="project-meta">
-            <span>2025.07 ~ 2025.08</span>
-            <span>6명 (AI 1, FE 2, BE 3)</span>
-            <span>기여도 60%</span>
-          </div>
+    <div class="project-meta">
+      <span>2024.09 ~ 2025.03</span>
+      <span>5명 (DESIGN 1, FE 2, BE 2)</span>
+      <span>기여도 60%</span>
+    </div>
 
-          <p class="project-role">
-            역할: 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API) 및 인프라 구축
-          </p>
+    <p class="project-role">
+      역할: 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)
+    </p>
 
-          <ul class="project-list number">
-            <li>예약 → 회의실 생성 → 참가자 관리 → 리포트 생성까지 도메인 모델·플로우 설계.</li>
-            <li>예약 시간 10분 전 자동 회의실 개설·초대 링크 발송, WebRTC + STOMP 기반 실시간 통신.</li>
-            <li>Whisper STT + GPT-4o로 발표 내용·말 습관·속도를 분석하는 자동 발표 리포트 구현.</li>
-          </ul>
+    <ul class="project-list number">
+      <li>학생·과목·수강이력은 MySQL 정규화, 졸업 요건은 MongoDB로 설계한 하이브리드 구조.</li>
+      <li>학과/학번별 검증 규칙을 전략 패턴으로 분리해 신규 요건 추가 시 코드 수정 최소화.</li>
+      <li>GlobalExceptionHandler + 공통 ApiResponse로 예외 처리·응답 포맷 일원화.</li>
+    </ul>
 
-          <p class="project-tech">
-            <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
-            Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
-          </p>
+    <p class="project-tech">
+      <strong>Tech.</strong> Java, Spring Boot, MySQL, MongoDB, Docker, Swagger
+    </p>
 
-          <div class="project-more-link">자세히 보기 <span>↗</span></div>
-        </article>
-      </div>
+    <div class="project-more-link">자세히 보기 <span>↗</span></div>
+  </article>
+</div>
 
-      <!-- YALDI -->
-      <div class="carousel-item-wrapper">
-        <article class="project-card" data-project="yaldi">
-          <div class="project-tag">실시간 협업 · 버전 관리</div>
+<!-- 중고워씽 -->
+<div class="carousel-item-wrapper">
+  <article class="project-card" data-project="used-auction">
+    <div class="project-tag">실시간 경매 · 동시성 제어</div>
 
-          <h3 class="project-title">YALDI – 실시간 ERD 협업 설계 툴</h3>
+    <h3 class="project-title">중고워씽 – 경매 기반 중고거래 플랫폼</h3>
 
-          <div class="project-meta">
-            <span>2025.10 ~ 2025.11</span>
-            <span>4명 (AI 1, FE 2, BE 3)</span>
-            <span>기여도 30%</span>
-          </div>
+    <div class="project-meta">
+      <span>2024.09 ~ 2024.12</span>
+      <span>4명 (AI 1, FE 1, BE 2)</span>
+      <span>기여도 50%</span>
+    </div>
 
-          <p class="project-role">
-            역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
-          </p>
+    <p class="project-role">
+      역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
+    </p>
 
-          <ul class="project-list number">
-            <li>Project·Version·Table·Column·Relation·Comment·Notification·AsyncJob 등 도메인 모델링.</li>
-            <li>PostgreSQL ENUM·트리거·제약 조건으로 버전·편집 이력·실제 데이터 일관성 유지.</li>
-            <li>WebSocket(STOMP) + Redis Pub/Sub + Kafka·SSE로 실시간 협업·알림·비동기 작업 처리.</li>
-          </ul>
+    <ul class="project-list number">
+      <li>입찰·낙찰·경매 종료·채팅을 RESTful API로 설계하고 Swagger로 문서화.</li>
+      <li>Redis 분산 락으로 동시 입찰 순서를 직렬화해 잘못된 낙찰·금액 덮어쓰기 문제 제거.</li>
+      <li>WebSocket + Redis Pub/Sub 구조로 입찰 현황·채팅을 실시간 브로드캐스트.</li>
+    </ul>
 
-          <p class="project-tech">
-            <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
-          </p>
+    <p class="project-tech">
+      <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
+    </p>
 
-          <div class="project-more-link">자세히 보기 <span>↗</span></div>
-        </article>
-      </div>
+    <div class="project-more-link">자세히 보기 <span>↗</span></div>
+  </article>
+</div>
+
 
     </div>
   </div>
