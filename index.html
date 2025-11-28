@@ -935,6 +935,25 @@
 .carousel-btn.next {
   right: -2px;
 }
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-soft);
+}
+.detail-image figcaption {
+  text-align: center;
+  margin-top: 6px;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
 
 @media (max-width: 640px) {
   .carousel-item-wrapper {
@@ -1186,7 +1205,7 @@
 <section id="projects" class="section">
   <div class="section-header">
     <h2 class="section-title">Projects</h2>
-    <p class="section-caption">주요 경험 프로젝트</p>
+    <p class="section-caption">주요 프로젝트 경험</p>
   </div>
 
   <!-- Carousel -->
@@ -1206,22 +1225,15 @@
     <div class="project-meta">
       <span>2025.10 ~ 2025.11</span>
       <span>6명 (AI 1, FE 2, BE 3)</span>
-      <span>기여도 30%</span>
+      <span>기여도 20%</span>
+              <span>백엔드 </span>
+
     </div>
 
-    <p class="project-role">
-      역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
-    </p>
+            <ul>
+              <li><b>기술 스택</b> : <br>Java(Spring Boot), <br>PostgreSQL, Redis, <br>Kafka, WebSocket(STOMP), SSE</li>
+            </ul>
 
-    <ul class="project-list number">
-      <li>Project·Version·Table·Column·Relation·Comment·Notification·AsyncJob 등 도메인 모델링.</li>
-      <li>PostgreSQL ENUM·트리거·제약 조건으로 버전·편집 이력·실제 데이터 일관성 유지.</li>
-      <li>WebSocket(STOMP) + Redis Pub/Sub + Kafka·SSE로 실시간 협업·알림·비동기 작업 처리.</li>
-    </ul>
-
-    <p class="project-tech">
-      <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
-    </p>
 
     <div class="project-more-link">자세히 보기 <span>↗</span></div>
   </article>
@@ -1343,6 +1355,7 @@
     <button data-section="overview" class="active">프로젝트 개요</button>
     <button data-section="contribution">주요 기여</button>
     <button data-section="result">성과</button>
+    <button data-section="view">프로젝트 구성</button>
   </div>
 </aside>
 
@@ -1754,28 +1767,31 @@ result: {
       title: 'YALDI (실시간 ERD 협업 설계 툴)',
       subtitle: '실시간 협업 · 버전 관리 · 비동기 처리',
       chips: ['2025.10 ~ 2025.11', '6명 (AI 1, FE 2, BE 3)', '기여도 30%'],
+        files: [
+    { name: 'A308_간트차트.xlsx', url: '/assets/files/A308_간트차트.xlsx' },
+    { name: 'A308_얄디(Yaldi) 기능 명세서.pdf', url: '/assets/files/A308_얄디(Yaldi) 기능 명세서.pdf' },
+    { name: 'A308-얄디-와이어프레임.pdf', url: '/assets/files/A308-얄디-와이어프레임.pdf' },
+    { name: 'API연동규격서.pdf', url: '/assets/files/API연동규격서.pdf' },
+    { name: 'ERD.png', url: '/assets/files/ERD.png' },
+    { name: 'Sequence Diagram.pdf', url: '/assets/files/Sequence Diagram.pdf' },
+    { name: 'yaldi_final_presentation.pdf', url: 'https://drive.google.com/file/d/1X5u80k0P9UOfcpNU6Sqsel18TRfG2A11/view?usp=sharing' }
+  ],
       sections: {
         overview: {
           title: '프로젝트 개요',
           html: `
-            <ul>
-              <li><b>기간</b> : 2025.10 ~ 2025.11</li>
-              <li><b>인원</b> : 6명 (AI 1, FE 2, BE 3)</li>
-              <li><b>기여도</b> : 30%</li>
-              <li><b>역할</b> : 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)</li>
-              <li><b>기술 스택</b> : Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE</li>
-            </ul>
-
-            <p style="margin-top:8px;">
-              여러 사용자가 동시에 ERD를 수정해도 충돌 없이 작업할 수 있도록
-              실시간 협업·버전 관리·편집 이력·알림·비동기 작업을 통합한 ERD 협업 플랫폼입니다.
-            </p>
-
             <figure class="detail-image">
               <img src="/assets/img/yaldi-realtime.gif"
                    alt="YALDI 실시간 협업 화면" />
               <figcaption></figcaption>
-            </figure>
+            </figure>       
+            여러 사용자가 동시에 ERD를 수정해도 충돌 없이 작업할 수 있도록 실시간 협업·버전 관리·편집 이력·알림·비동기 작업을 통합한 ERD 협업 플랫폼입니다.   <br><br>
+    <p class="project-role">
+      역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
+    </p>
+    <p class="project-tech">
+      <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
+    </p>
           `,
         },
         contribution: {
@@ -1871,6 +1887,59 @@ result: {
     </div>
   `,
 },
+view: {
+  title: '프로젝트 구성',
+  html: `
+    <div class="project-gallery">
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_mail.png" alt="Yaldi 초대 메일" />
+        <figcaption>프로젝트 초대 메일 및 멤버 관리</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi-viewer.gif" alt="Yaldi 뷰어 모드" />
+        <figcaption>단일 모듈로 구성된 ERD Viewer 모드</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_search.gif" alt="Yaldi 검색 기능" />
+        <figcaption>전역 검색 기능 (테이블/컬럼/관계 검색)</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_version.gif" alt="버전 관리 화면" />
+        <figcaption>버전 관리 · 비교 · 롤백 화면</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_datamodel.gif" alt="데이터 모델 화면" />
+        <figcaption>Data Model 자동 생성 및 타입 매핑</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_export.gif" alt="SQL Export 기능" />
+        <figcaption>모델 기반 SQL Export</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_import.gif" alt="SQL Import 기능" />
+        <figcaption>SQL Import로 ERD 자동 생성</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_mockdata.gif" alt="Mock Data 생성" />
+        <figcaption>AI 기반 Mock Data 생성 기능</figcaption>
+      </figure>
+
+      <figure class="detail-image">
+        <img src="/assets/img/yaldi_aidraft.gif" alt="AI ERD Draft 생성" />
+        <figcaption>AI Assistant를 활용한 ERD Draft 자동 생성</figcaption>
+      </figure>
+
+    </div>
+  `,
+},
 
       },
     },
@@ -1918,16 +1987,67 @@ function openPrevProject() {
     });
 
     setActiveSidebar('overview');
+
+        const sidebar = document.querySelector('.project-detail-sidebar');
+
+    // 기존 리스트 제거
+    const oldBox = document.getElementById('file-box');
+    if (oldBox) oldBox.remove();
+
+    if (data.files && data.files.length > 0) {
+        const box = document.createElement('div');
+        box.id = "file-box";
+        box.style.marginTop = "18px";
+
+        // 헤더 (클릭 시 토글)
+        box.innerHTML = `
+            <div id="file-toggle" 
+                 style="font-size:14px; font-weight:600; cursor:pointer; user-select:none;">
+                 📁 관련 파일
+            </div>
+            <ul id="file-list" 
+                style="list-style:none; padding-left:4px; font-size:13px; margin-top:8px; display:none;">
+                ${data.files.map(f => `
+                    <li style="margin-bottom:6px; cursor:pointer; color:var(--accent);"
+                        onclick="openFileConfirm('${f.url}', '${f.name}')">
+                        🔗 ${f.name}
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+
+        sidebar.appendChild(box);
+
+        // ⭐ 토글 기능 추가 (펼치기/접기)
+        document.getElementById('file-toggle').onclick = () => {
+            const list = document.getElementById('file-list');
+            list.style.display = (list.style.display === 'none') ? 'block' : 'none';
+        };
+    }
   }
 
 function setActiveSidebar(sectionKey) {
+  // 버튼 active 적용
   document.querySelectorAll('.sidebar-nav button').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.section === sectionKey);
   });
 
-  const content = document.querySelector('.project-detail-content');
-  content.scrollTo({ top: 0, behavior: 'smooth' });
+  // 이동해야 할 섹션 찾기
+  const target = document.querySelector(
+    `.detail-section[data-section-key="${sectionKey}"]`
+  );
+
+  const container = document.querySelector('.project-detail-content');
+
+  if (target && container) {
+    const top = target.offsetTop; // 섹션의 Y 위치
+    container.scrollTo({
+      top,
+      behavior: "smooth"
+    });
+  }
 }
+
 
 function openProjectDetail(key) {
   currentProjectKey = key; // ⭐ 현재 열려있는 프로젝트 저장
@@ -1944,6 +2064,14 @@ function openProjectDetail(key) {
 
   // 전역에서 쓰는 함수 (HTML onclick용)
   window.closeProjectDetail = closeProjectDetail;
+
+
+  window.openFileConfirm = function(url, name) {
+    const ok = confirm(`${name} 파일을 새 창에서 열겠습니까?`);
+    if (ok) {
+        window.open(url, "_blank");
+    }
+};
 
   // DOM 준비 후 이벤트 바인딩
   document.addEventListener('DOMContentLoaded', () => {
