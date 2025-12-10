@@ -1222,7 +1222,7 @@
 
     <div class="project-meta">
       <span>2025.10 ~ 2025.11</span>
-      <span>6명 (AI 1, FE 2, BE 3)</span>
+      <span>6명 (BE 3, FE 2, AI 1)</span>
       <span>기여도 20%</span>
               <span>백엔드 </span>
 
@@ -1246,25 +1246,14 @@
 
     <div class="project-meta">
       <span>2025.07 ~ 2025.08</span>
-      <span>6명 (AI 1, FE 2, BE 3)</span>
+      <span>6명 (BE 3, FE 2, AI 1)</span>
       <span>기여도 60%</span>
+      <span>백엔드, 인프라</span>
     </div>
 
-    <p class="project-role">
-      역할: 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API) 및 인프라 구축
-    </p>
-
-    <ul class="project-list number">
-      <li>예약 → 회의실 생성 → 참가자 관리 → 리포트 생성까지 도메인 모델·플로우 설계.</li>
-      <li>예약 시간 10분 전 자동 회의실 개설·초대 링크 발송, WebRTC + STOMP 기반 실시간 통신.</li>
-      <li>Whisper STT + GPT-4o로 발표 내용·말 습관·속도를 분석하는 자동 발표 리포트 구현.</li>
-    </ul>
-
-    <p class="project-tech">
-      <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
-      Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
-    </p>
-
+<ul>
+    <li><b>기술 스택</b> : <br>Java(Spring Boot), MySQL, Redis, <br>WebSocket, WebRTC, LiveKit, Docker, <br>GitLab CI/CD, AWS EC2, <br>Nginx, Let’s Encrypt, Whisper STT</li>
+  </ul>
     <div class="project-more-link">자세히 보기 <span>↗</span></div>
   </article>
 </div>
@@ -1278,24 +1267,12 @@
 
     <div class="project-meta">
       <span>2024.09 ~ 2025.03</span>
-      <span>5명 (DESIGN 1, FE 2, BE 2)</span>
+      <span>5명 (BE 2, FE 2, 디자이너 1)</span>
       <span>기여도 60%</span>
     </div>
+    <ul><li><b>기술 스택</b> : <br>Java(Spring Boot), MySQL, MongoDB, <br>Docker, Swagger</li></ul>
 
-    <p class="project-role">
-      역할: 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)
-    </p>
-
-    <ul class="project-list number">
-      <li>학생·과목·수강이력은 MySQL 정규화, 졸업 요건은 MongoDB로 설계한 하이브리드 구조.</li>
-      <li>학과/학번별 검증 규칙을 전략 패턴으로 분리해 신규 요건 추가 시 코드 수정 최소화.</li>
-      <li>GlobalExceptionHandler + 공통 ApiResponse로 예외 처리·응답 포맷 일원화.</li>
-    </ul>
-
-    <p class="project-tech">
-      <strong>Tech.</strong> Java, Spring Boot, MySQL, MongoDB, Docker, Swagger
-    </p>
-
+    
     <div class="project-more-link">자세히 보기 <span>↗</span></div>
   </article>
 </div>
@@ -1309,23 +1286,10 @@
 
     <div class="project-meta">
       <span>2024.09 ~ 2024.12</span>
-      <span>4명 (AI 1, FE 1, BE 2)</span>
+      <span>4명 (BE 2, FE 1, AI 1)</span>
       <span>기여도 50%</span>
     </div>
-
-    <p class="project-role">
-      역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
-    </p>
-
-    <ul class="project-list number">
-      <li>입찰·낙찰·경매 종료·채팅을 RESTful API로 설계하고 Swagger로 문서화.</li>
-      <li>Redis 분산 락으로 동시 입찰 순서를 직렬화해 잘못된 낙찰·금액 덮어쓰기 문제 제거.</li>
-      <li>WebSocket + Redis Pub/Sub 구조로 입찰 현황·채팅을 실시간 브로드캐스트.</li>
-    </ul>
-
-    <p class="project-tech">
-      <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
-    </p>
+    <ul><li><b>기술 스택</b> : <br>Java(Spring Boot), Redis, MySQL, <br>WebSocket, Docker</li></ul>
 
     <div class="project-more-link">자세히 보기 <span>↗</span></div>
   </article>
@@ -1386,22 +1350,22 @@
     'used-auction': {
       title: '중고워씽 (경매 기반 중고거래 플랫폼)',
       subtitle: '실시간 경매 · 채팅 · 동시성 제어',
-      chips: ['2024.09 ~ 2024.12', '4명 (AI 1, FE 1, BE 2)', '기여도 50%'],
+      chips: ['2024.09 ~ 2024.12', '4명 (BE 2, FE 1, AI 1)', '기여도 50%'],
       sections: {
         overview: {
           title: '프로젝트 개요',
           html: `
-            <ul>
-              <li><b>기간</b> : 2024.09 ~ 2024.12</li>
-              <li><b>인원</b> : 4명 (AI 1, FE 1, BE 2)</li>
-              <li><b>기여도</b> : 50%</li>
-              <li><b>역할</b> : 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)</li>
-              <li><b>기술 스택</b> : Java, Spring Boot, Redis, MySQL, WebSocket, Docker</li>
-            </ul>
 
+    <p class="project-role">
+      역할: 백엔드 (실시간 경매·채팅 및 동시성 제어 담당)
+    </p>
+
+    <p class="project-tech">
+      <strong>Tech.</strong> Java, Spring Boot, Redis, MySQL, WebSocket, Docker
+    </p>
             <p style="margin-top:8px;">
               실시간 경매 환경에서 <b>동시 입찰에도 데이터 오류 없이 정확한 낙찰</b>을 보장하고,
-              WebSocket 기반 실시간 채팅으로 사용자 경험을 높이는 것을 목표로 한 프로젝트입니다.
+              WebSocket 기반 실시간 채팅으로 사용자 경험을 높이는 것을 목표로 한 프로젝트입니다
             </p>
 
             <figure class="detail-image">
@@ -1418,41 +1382,41 @@
               <li>
                 <b>경매 도메인 및 API 설계</b>
                 <ul>
-                  <li>입찰, 낙찰, 경매 종료, 채팅 등 기능을 RESTful 원칙에 맞춰 API로 설계.</li>
-                  <li>Swagger 기반으로 API 문서를 자동화해 팀 내 협업 효율 향상.</li>
+                  <li>입찰, 낙찰, 경매 종료, 채팅 등 기능을 RESTful 원칙에 맞춰 API로 설계</li>
+                  <li>Swagger 기반으로 API 문서를 자동화해 팀 내 협업 효율 향상</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>실시간 경매 안정성 확보 (동시성 제어)</b>
                 <ul>
-                  <li>Redis 분산 락을 이용해 동시 입찰 시 순서를 직렬화, 잘못된 낙찰/금액 덮어쓰기 문제 방지.</li>
-                  <li>중복/경합 입찰로 인한 데이터 오류를 <b>0%</b>까지 줄임.</li>
+                  <li>Redis 분산 락을 이용해 동시 입찰 시 순서를 직렬화, 잘못된 낙찰/금액 덮어쓰기 문제 방지</li>
+                  <li>중복/경합 입찰로 인한 데이터 오류를 <b>0%</b>까지 줄임</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>실시간 채팅 및 경매 진행 흐름 구현</b>
                 <ul>
-                  <li>WebSocket + Redis Pub/Sub 구조로 채팅 및 입찰 현황 브로드캐스트.</li>
-                  <li>메시지 처리 로직·Redis 캐시 튜닝으로 응답 속도를 <b>150ms → 50ms</b> 수준으로 단축.</li>
+                  <li>WebSocket + Redis Pub/Sub 구조로 채팅 및 입찰 현황 브로드캐스트</li>
+                  <li>메시지 처리 로직·Redis 캐시 튜닝으로 응답 속도를 <b>150ms → 50ms</b> 수준으로 단축</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>경매 종료 자동화</b>
                 <ul>
-                  <li>Redis Key Expiration Event를 활용해 경매 종료 시점을 자동 감지.</li>
-                  <li>종료 시 최종 입찰자 확정, 상태 업데이트, 후속 처리 로직이 자동 실행되도록 설계.</li>
+                  <li>Redis Key Expiration Event를 활용해 경매 종료 시점을 자동 감지</li>
+                  <li>종료 시 최종 입찰자 확정, 상태 업데이트, 후속 처리 로직이 자동 실행되도록 설계</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>보안 및 품질 관리</b>
                 <ul>
-                  <li>JWT 기반 인증/인가로 로그인 사용자·경매 참여자·관리자 권한 분리.</li>
-                  <li>JUnit + Mockito 기반 단위 테스트로 핵심 비즈니스 로직 검증, 약 <b>70% 코드 커버리지</b> 확보.</li>
-                  <li>Docker 컨테이너로 실행 환경을 표준화해 팀원 간 동일한 개발/테스트 환경 유지.</li>
+                  <li>JWT 기반 인증/인가로 로그인 사용자·경매 참여자·관리자 권한 분리</li>
+                  <li>JUnit + Mockito 기반 단위 테스트로 핵심 비즈니스 로직 검증, 약 <b>70% 코드 커버리지</b> 확보</li>
+                  <li>Docker 컨테이너로 실행 환경을 표준화해 팀원 간 동일한 개발/테스트 환경 유지</li>
                 </ul>
               </li>
             </ol>
@@ -1470,7 +1434,7 @@ result: {
           Redis 분산 락과 경매 종료 자동화를 통해
           중복·경합 입찰로 인한 데이터 오류를 <b>0%</b>로 만들고,
           잘못된 낙찰·금액 덮어쓰기 이슈를 제거해
-          경매 결과에 대한 사용자 신뢰를 높였습니다.
+          경매 결과에 대한 사용자 신뢰를 높였습니다
         </div>
       </div>
 
@@ -1481,7 +1445,7 @@ result: {
         <div class="result-item-body">
           WebSocket + Redis Pub/Sub 구조와 캐시 튜닝으로
           실시간 응답 속도를 평균 <b>150ms → 50ms</b>로 단축해,
-          끊김 없는 실시간 경매·채팅 경험을 제공했습니다.
+          끊김 없는 실시간 경매·채팅 경험을 제공했습니다
         </div>
       </div>
     </div>
@@ -1494,23 +1458,23 @@ result: {
     'gradu-inha': {
       title: 'Gradu-Inha (졸업 요건 검사 사이트)',
       subtitle: '하이브리드 DB · 졸업 요건 검증 로직',
-      chips: ['2024.09 ~ 2025.03', '5명 (DESIGN 1, FE 2, BE 2)', '기여도 60%'],
+      chips: ['2024.09 ~ 2025.03', '5명 (BE 2, FE 2, DESIGN 1)', '기여도 60%'],
       sections: {
 overview: {
   title: '프로젝트 개요',
   html: `
     <ul>
-      <li><b>기간</b> : 2024.09 ~ 2025.03</li>
-      <li><b>인원</b> : 5명 (DESIGN 1, FE 2, BE 2)</li>
-      <li><b>기여도</b> : 60%</li>
       <li><b>역할</b> : 백엔드 (하이브리드 DB 아키텍처·졸업 요건 검증 로직 전담)</li>
-      <li><b>기술 스택</b> : Java, Spring Boot, MySQL, MongoDB, Docker, Swagger</li>
+
+    <p class="project-tech">
+      <strong>Tech.</strong> Java(Spring Boot), MySQL, MongoDB, Docker, Swagger
+    </p>
     </ul>
 
     <p style="margin-top:8px;">
-      학생의 수강 이력을 기반으로 전공/교양/필수/선택/대체 과목 등 복잡한 졸업 요건을 자동으로 검증하는 서비스입니다.
+      학생의 수강 이력을 기반으로 전공/교양/필수/선택/대체 과목 등 복잡한 졸업 요건을 자동으로 검증하는 서비스입니다
       학과·학번·교육과정 개편에 따라 자주 변경되는 규정을 유연하게 관리하기 위해
-      <b>MySQL + MongoDB 하이브리드 아키텍처</b>를 설계했습니다.
+      <b>MySQL + MongoDB 하이브리드 아키텍처</b>를 설계했습니다
     </p>
 
   `,
@@ -1523,8 +1487,8 @@ overview: {
               <li>
                 <b>하이브리드 DB 아키텍처 설계</b>
                 <ul>
-                  <li>MySQL 기반으로 학생·과목·수강이력 테이블을 직접 모델링하고 정규화.</li>
-                  <li>졸업 요건은 MongoDB에 저장해 요건 추가·변경 시 스키마 수정 없이 유연하게 반영.</li>
+                  <li>MySQL 기반으로 학생·과목·수강이력 테이블을 직접 모델링하고 정규화</li>
+                  <li>졸업 요건은 MongoDB에 저장해 요건 추가·변경 시 스키마 수정 없이 유연하게 반영</li>
                 </ul>
               </li>
     <!-- 여기부터 가로 배치 -->
@@ -1545,8 +1509,8 @@ overview: {
               <li style="margin-top:6px;">
                 <b>졸업 요건 검증 로직 설계·구현</b>
                 <ul>
-                  <li>학생 이수 내역과 커리큘럼을 비교해 졸업 요건 충족 여부를 판단하는 핵심 검증 로직 개발.</li>
-                  <li>학과/연도별 검증 규칙을 전략 패턴으로 분리해 새로운 요건도 기존 코드 수정 없이 Strategy 확장만으로 대응.</li>
+                  <li>학생 이수 내역과 커리큘럼을 비교해 졸업 요건 충족 여부를 판단하는 핵심 검증 로직 개발</li>
+                  <li>학과/연도별 검증 규칙을 전략 패턴으로 분리해 새로운 요건도 기존 코드 수정 없이 Strategy 확장만으로 대응</li>
                 </ul>
 
                 <figure class="detail-image">
@@ -1559,8 +1523,8 @@ overview: {
               <li style="margin-top:6px;">
                 <b>일관된 예외 처리 및 API 응답 설계</b>
                 <ul>
-                  <li><code>GlobalExceptionHandler</code>와 공통 <code>ApiResponse</code> 포맷으로 전역 예외 처리 구조 설계.</li>
-                  <li>예외 상황별 에러 코드·메시지 체계를 정리해 FE 협업 및 디버깅 효율 향상.</li>
+                  <li><code>GlobalExceptionHandler</code>와 공통 <code>ApiResponse</code> 포맷으로 전역 예외 처리 구조 설계</li>
+                  <li>예외 상황별 에러 코드·메시지 체계를 정리해 FE 협업 및 디버깅 효율 향상</li>
                 </ul>
 
                 <figure class="detail-image">
@@ -1573,8 +1537,8 @@ overview: {
               <li style="margin-top:6px;">
                 <b>테스트 및 성능 검증</b>
                 <ul>
-                  <li>JUnit 기반 통합 테스트로 주요 검증 로직의 안정성 확보.</li>
-                  <li>쿼리 및 검증 로직 개선으로 API 평균 응답 시간을 <b>500ms → 200ms</b>로 단축.</li>
+                  <li>JUnit 기반 통합 테스트로 주요 검증 로직의 안정성 확보</li>
+                  <li>쿼리 및 검증 로직 개선으로 API 평균 응답 시간을 <b>500ms → 200ms</b>로 단축</li>
                 </ul>
 
                 <figure class="detail-image">
@@ -1587,8 +1551,8 @@ overview: {
               <li style="margin-top:6px;">
                 <b>개발 환경 및 문서화</b>
                 <ul>
-                  <li>Docker를 이용해 로컬·테스트 환경을 컨테이너로 표준화.</li>
-                  <li>Swagger 기반 API 문서 자동화로 기능 추가·변경 시에도 최신 스펙 유지.</li>
+                  <li>Docker를 이용해 로컬·테스트 환경을 컨테이너로 표준화</li>
+                  <li>Swagger 기반 API 문서 자동화로 기능 추가·변경 시에도 최신 스펙 유지</li>
                 </ul>
               </li>
             </ol>
@@ -1604,7 +1568,7 @@ result: {
         </div>
         <div class="result-item-body">
           MongoDB 커리큘럼 설계와 전략 패턴 덕분에 학과·학번·교육과정이 바뀌어도
-          코드 수정 없이 데이터와 전략 추가만으로 대응할 수 있는 구조를 만들었습니다.
+          코드 수정 없이 데이터와 전략 추가만으로 대응할 수 있는 구조를 만들었습니다
         </div>
       </div>
 
@@ -1614,7 +1578,7 @@ result: {
         </div>
         <div class="result-item-body">
           자동 검증 로직으로 수작업 대비 실수 가능성을 크게 줄이고,
-          통합 테스트를 통해 잘못된 판정 케이스를 사전에 탐지·수정했습니다.
+          통합 테스트를 통해 잘못된 판정 케이스를 사전에 탐지·수정했습니다
         </div>
       </div>
 
@@ -1624,7 +1588,7 @@ result: {
         </div>
         <div class="result-item-body">
           GlobalExceptionHandler + 공통 ApiResponse로 장애 상황에서도 일관된 에러 응답을 제공하고,
-          에러 코드 체계를 정리해 연동 테스트·디버깅 시간을 단축했습니다.
+          에러 코드 체계를 정리해 연동 테스트·디버깅 시간을 단축했습니다
         </div>
       </div>
 
@@ -1634,7 +1598,7 @@ result: {
         </div>
         <div class="result-item-body">
           쿼리 구조와 검증 로직 개선으로 평균 응답 시간을
-          약 <b>500ms → 200ms</b>로 줄여, 복잡한 검증에서도 빠른 결과 조회 경험을 제공합니다.
+          약 <b>500ms → 200ms</b>로 줄여, 복잡한 검증에서도 빠른 결과 조회 경험을 제공합니다
         </div>
       </div>
     </div>
@@ -1647,22 +1611,23 @@ result: {
     'pitch-it': {
       title: 'Pitch-it (실시간 화상회의 플랫폼)',
       subtitle: 'WebRTC · AI 발표 리포트 · 인프라 자동화',
-      chips: ['2025.07 ~ 2025.08', '6명 (AI 1, FE 2, BE 3)', '기여도 60%'],
+      chips: ['2025.07 ~ 2025.08', '6명 (BE 3, FE 2, AI 1)', '기여도 60%'],
       sections: {
         overview: {
           title: '프로젝트 개요',
           html: `
             <ul>
-              <li><b>기간</b> : 2025.07 ~ 2025.08</li>
-              <li><b>인원</b> : 6명 (AI 1, FE 2, BE 3)</li>
-              <li><b>기여도</b> : 60%</li>
-              <li><b>역할</b> : 백엔드 (도메인 모델링·예약/회의 백엔드·AI 리포트 API 전담) 및 인프라 구축</li>
-              <li><b>기술 스택</b> : Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit, Docker, GitLab CI/CD, AWS EC2, Nginx, Let’s Encrypt, GPT-4o, Whisper STT</li>
+              <li><b>역할</b> : 백엔드 및 인프라 구축</li>
+
+    <p class="project-tech">
+      <strong>Tech.</strong> Java(Spring Boot), MySQL, Redis, WebSocket, WebRTC, LiveKit,
+      Docker, GitLab CI/CD, AWS EC2, Nginx, GPT-4o, Whisper STT
+    </p>
             </ul>
 
             <p style="margin-top:8px;">
               실시간 화상회의에 더해 발표 내용을 STT + GPT 분석으로 평가해
-              <b>발표 리포트</b>까지 제공하는 코칭형 화상회의 플랫폼입니다.
+              <b>발표 리포트</b>까지 제공하는 코칭형 화상회의 플랫폼입니다
             </p>
 
             <figure class="detail-image">
@@ -1679,42 +1644,42 @@ result: {
               <li>
                 <b>도메인 및 인증 설계</b>
                 <ul>
-                  <li>Reservation, Room, Participant, Report 등 핵심 엔티티 모델링.</li>
-                  <li>“예약 → 회의실 생성 → 참가자 관리 → 리포트 생성”까지 일관된 도메인 플로우 설계.</li>
-                  <li>JWT 기반 인증/인가로 사용자·발표자·관리자 역할별 접근 제어 분리.</li>
+                  <li>Reservation, Room, Participant, Report 등 핵심 엔티티 모델링</li>
+                  <li>“예약 → 회의실 생성 → 참가자 관리 → 리포트 생성”까지 일관된 도메인 플로우 설계</li>
+                  <li>JWT 기반 인증/인가로 사용자·발표자·관리자 역할별 접근 제어 분리</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>실시간 회의·예약 핵심 기능 구현</b>
                 <ul>
-                  <li>예약 시간 기준 10분 전 자동 회의실 개설 및 초대 링크 발송 스케줄러 구현.</li>
-                  <li>WebRTC + STOMP(WebSocket) 기반 실시간 통신 구조로 대기실 → 회의실 입장 흐름 구현.</li>
-                  <li>Redis 기반 토큰 관리·블랙리스트 처리로 재사용·탈취 토큰을 차단, 인증 실패율을 <b>5% → 0.5%</b>로 감소.</li>
+                  <li>예약 시간 기준 10분 전 자동 회의실 개설 및 초대 링크 발송 스케줄러 구현</li>
+                  <li>WebRTC + STOMP(WebSocket) 기반 실시간 통신 구조로 대기실 → 회의실 입장 흐름 구현</li>
+                  <li>Redis 기반 토큰 관리·블랙리스트 처리로 재사용·탈취 토큰을 차단, 인증 실패율을 <b>5% → 0.5%</b>로 감소</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>인프라 및 배포 자동화</b>
                 <ul>
-                  <li>GitLab CI/CD 파이프라인으로 빌드 → 테스트 → Docker 이미지 생성 → EC2 배포 자동화.</li>
-                  <li>Nginx Reverse Proxy + Let’s Encrypt로 SSL 인증서를 적용해 전 구간 HTTPS 통신 보장.</li>
+                  <li>GitLab CI/CD 파이프라인으로 빌드 → 테스트 → Docker 이미지 생성 → EC2 배포 자동화</li>
+                  <li>Nginx Reverse Proxy + Let’s Encrypt로 SSL 인증서를 적용해 전 구간 HTTPS 통신 보장</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>AI 기반 분석 기능 연동</b>
                 <ul>
-                  <li>Whisper STT 서버를 Docker 컨테이너로 구성해 EC2에 배포, 발표 음성을 텍스트로 변환.</li>
-                  <li>GPT-4o와 연계해 발표 내용·말 습관·속도 등을 분석하는 발표 리포트 API 구현.</li>
+                  <li>Whisper STT 서버를 Docker 컨테이너로 구성해 EC2에 배포, 발표 음성을 텍스트로 변환</li>
+                  <li>GPT-4o와 연계해 발표 내용·말 습관·속도 등을 분석하는 발표 리포트 API 구현</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>테스트 및 품질 관리</b>
                 <ul>
-                  <li>핵심 비즈니스 로직에 대한 단위 테스트 작성.</li>
-                  <li>Spring REST Docs를 활용해 실제 동작 기반 API 문서 생성.</li>
+                  <li>핵심 비즈니스 로직에 대한 단위 테스트 작성</li>
+                  <li>Spring REST Docs를 활용해 실제 동작 기반 API 문서 생성</li>
                 </ul>
               </li>
             </ol>
@@ -1730,7 +1695,7 @@ result: {
         </div>
         <div class="result-item-body">
           JWT + Redis 기반 토큰 관리와 블랙리스트 처리를 통해 재사용·탈취 토큰을 차단하고,
-          인증 실패율을 <b>5% → 0.5%</b>까지 낮추며 로그인·입장 과정에서의 오류를 크게 줄였습니다.
+          인증 실패율을 <b>5% → 0.5%</b>까지 낮추며 로그인·입장 과정에서의 오류를 크게 줄였습니다
         </div>
       </div>
 
@@ -1740,7 +1705,7 @@ result: {
         </div>
         <div class="result-item-body">
           GitLab CI/CD 파이프라인으로 빌드–테스트–Docker 이미지 생성–EC2 배포 전 과정을 자동화하여,
-          기능 수정 후 배포까지의 리드 타임을 크게 단축했습니다.
+          기능 수정 후 배포까지의 리드 타임을 크게 단축했습니다
         </div>
       </div>
 
@@ -1751,7 +1716,7 @@ result: {
         <div class="result-item-body">
           Whisper STT + GPT-4o 분석 파이프라인으로 발표 내용을 자동 텍스트화하고
           말 습관·속도·구조를 분석하는 리포트를 제공해,
-          단순 화상회의를 넘어 <b>코칭형 발표 서비스</b>로 확장했습니다.
+          단순 화상회의를 넘어 <b>코칭형 발표 서비스</b>로 확장했습니다
         </div>
       </div>
     </div>
@@ -1764,7 +1729,7 @@ result: {
     'yaldi': {
       title: 'YALDI (실시간 ERD 협업 설계 툴)',
       subtitle: '실시간 협업 · 버전 관리 · 비동기 처리',
-      chips: ['2025.10 ~ 2025.11', '6명 (AI 1, FE 2, BE 3)', '기여도 20%'],
+      chips: ['2025.10 ~ 2025.11', '6명 (BE 3, FE 2, AI 1)', '기여도 20%'],
         files: [
     { name: 'A308_간트차트.xlsx', url: '/assets/files/A308_간트차트.xlsx' },
     { name: 'A308_얄디(Yaldi) 기능 명세서.pdf', url: '/assets/files/A308_얄디(Yaldi) 기능 명세서.pdf' },
@@ -1778,18 +1743,19 @@ result: {
         overview: {
           title: '프로젝트 개요',
           html: `
-            <figure class="detail-image">
-              <img src="/assets/img/yaldi-realtime.gif"
-                   alt="YALDI 실시간 협업 화면" />
-              <figcaption></figcaption>
-            </figure>       
-            여러 사용자가 동시에 ERD를 수정해도 충돌 없이 작업할 수 있도록 실시간 협업·버전 관리·편집 이력·알림·비동기 작업을 통합한 ERD 협업 플랫폼입니다.   <br><br>
-    <p class="project-role">
+              <p class="project-role">
       역할: 백엔드 (아키텍처 및 실시간 협업·버전 관리 기능 설계·구현)
     </p>
     <p class="project-tech">
       <strong>Tech.</strong> Java(Spring Boot), PostgreSQL, Redis, Kafka, WebSocket(STOMP), SSE
     </p>
+            <figure class="detail-image">
+              <img src="/assets/img/yaldi-realtime.gif"
+                   alt="YALDI 실시간 협업 화면" />
+              <figcaption></figcaption>
+            </figure>       
+            여러 사용자가 동시에 ERD를 수정해도 충돌 없이 작업할 수 있도록 실시간 협업·버전 관리·편집 이력·알림·비동기 작업을 통합한 ERD 협업 플랫폼입니다   <br><br>
+
           `,
         },
         contribution: {
@@ -1800,38 +1766,38 @@ result: {
                 <b>도메인·DB 설계</b>
                 <ul>
                     <li>Project · Version · Table · Column · Relation · Comment · Notification · AsyncJob 등 도메인 모델링.</li>
-                    <li>PostgreSQL ENUM·트리거·제약조건으로 버전·편집 이력·실제 데이터를 일관되게 관리.</li>
+                    <li>PostgreSQL ENUM·트리거·제약조건으로 버전·편집 이력·실제 데이터를 일관되게 관리</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>버전 관리 & 롤백 아키텍처 설계</b>
                 <ul>
-                  <li>ERD 상태를 스냅샷으로 저장하는 버전 생성·조회·비교·롤백 로직 구현.</li>
-                  <li>EditHistory 엔티티와 DB 트리거로 테이블/컬럼/관계 변경 이력을 자동 기록.</li>
+                  <li>ERD 상태를 스냅샷으로 저장하는 버전 생성·조회·비교·롤백 로직 구현</li>
+                  <li>EditHistory 엔티티와 DB 트리거로 테이블/컬럼/관계 변경 이력을 자동 기록</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>실시간 협업 기능 구현</b>
                 <ul>
-                  <li>WebSocket(STOMP)을 통해 테이블 이동, 잠금(TABLE_LOCK/UNLOCK), 커서 위치 등을 브로드캐스트.</li>
-                  <li>Redis Pub/Sub로 다수 서버 인스턴스 간에도 동일 이벤트를 공유하도록 설계.</li>
+                  <li>WebSocket(STOMP)을 통해 테이블 이동, 잠금(TABLE_LOCK/UNLOCK), 커서 위치 등을 브로드캐스트</li>
+                  <li>Redis Pub/Sub로 다수 서버 인스턴스 간에도 동일 이벤트를 공유하도록 설계</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>알림 & 비동기 작업 처리</b>
                 <ul>
-                  <li>SSE 기반 알림 서버로 댓글·멘션·프로젝트 초대 등의 이벤트를 실시간 푸시.</li>
-                  <li>Kafka + AsyncJob으로 대용량 스키마 검증, SQL Import/Export를 비동기 처리.</li>
+                  <li>SSE 기반 알림 서버로 댓글·멘션·프로젝트 초대 등의 이벤트를 실시간 푸시</li>
+                  <li>Kafka + AsyncJob으로 대용량 스키마 검증, SQL Import/Export를 비동기 처리</li>
                 </ul>
               </li>
 
               <li style="margin-top:6px;">
                 <b>안정성 확보</b>
                 <ul>
-                  <li>트랜잭션 전파 수준을 설계해 메인 작업이 롤백돼도 편집 이력·감사 로그는 별도 트랜잭션으로 남도록 구현.</li>
+                  <li>트랜잭션 전파 수준을 설계해 메인 작업이 롤백돼도 편집 이력·감사 로그는 별도 트랜잭션으로 남도록 구현</li>
                 </ul>
               </li>
             </ol>
@@ -1848,7 +1814,7 @@ result: {
         <div class="result-item-body">
           버전 관리·롤백·편집 이력을 결합해 여러 사용자가 동시에 ERD를 수정해도
           변경 내역이 명확히 남고, 의도치 않은 변경이 발생했을 때 빠르게
-          원인 파악과 복구가 가능한 구조를 만들었습니다.
+          원인 파악과 복구가 가능한 구조를 만들었습니다
         </div>
       </div>
 
@@ -1859,7 +1825,7 @@ result: {
         <div class="result-item-body">
           WebSocket + Redis Pub/Sub 구조로 테이블 이동·잠금·커서 위치 등의
           실시간 동기화를 보장하고, 다수 서버 인스턴스 수평 확장을 고려한
-          아키텍처를 마련했습니다.
+          아키텍처를 마련했습니다
         </div>
       </div>
 
@@ -1869,7 +1835,7 @@ result: {
         </div>
         <div class="result-item-body">
           Kafka 기반 비동기 처리로 대용량 스키마 검증·SQL Import/Export를
-          백그라운드로 분리해, 사용자는 편집 화면에서 끊김 없이 작업할 수 있게 했습니다.
+          백그라운드로 분리해, 사용자는 편집 화면에서 끊김 없이 작업할 수 있게 했습니다
         </div>
       </div>
 
@@ -1879,7 +1845,7 @@ result: {
         </div>
         <div class="result-item-body">
           메인 로직과 분리된 트랜잭션으로 편집 이력을 남겨
-          “누가, 언제, 무엇을 변경했는지”를 추적할 수 있는 운영 가시성을 확보했습니다.
+          “누가, 언제, 무엇을 변경했는지”를 추적할 수 있는 운영 가시성을 확보했습니다
         </div>
       </div>
     </div>
@@ -2052,6 +2018,8 @@ function openProjectDetail(key) {
   renderProjectDetail(key);
   document.getElementById('project-detail').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  document.querySelector(".project-detail-content").scrollTop = 0;
 }
 
 
