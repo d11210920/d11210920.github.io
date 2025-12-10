@@ -953,6 +953,41 @@
   color: var(--text-sub);
   font-size: 14px;
 }
+.project-list-nav {
+  margin-bottom: 18px;
+}
+
+.project-list-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-sub);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-list-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-list-items button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.35);
+  background: rgba(15,23,42,0.6);
+  color: var(--text-main);
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project-list-items button:hover {
+  border-color: var(--accent);
+  background: rgba(56,189,248,0.12);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
 
 
 @media (max-width: 640px) {
@@ -1206,6 +1241,16 @@
     <p class="section-caption">주요 프로젝트 경험</p>
   </div>
 
+  <div class="project-list-nav">
+    <span class="project-list-title">프로젝트 목록</span>
+    <div class="project-list-items">
+      <button data-project="yaldi">YALDI</button>
+      <button data-project="pitch-it">Pitch-it</button>
+      <button data-project="gradu-inha">Gradu-Inha</button>
+      <button data-project="used-auction">중고워씽</button>
+    </div>
+  </div>
+  
   <!-- Carousel -->
   <div class="carousel-wrapper">
     <button class="carousel-btn prev">‹</button>
@@ -1269,6 +1314,7 @@
       <span>2024.09 ~ 2025.03</span>
       <span>5명 (BE 2, FE 2, 디자이너 1)</span>
       <span>기여도 60%</span>
+      <span>백엔드</span>
     </div>
     <ul><li><b>기술 스택</b> : <br>Java(Spring Boot), MySQL, MongoDB, <br>Docker, Swagger</li></ul>
 
@@ -1288,6 +1334,7 @@
       <span>2024.09 ~ 2024.12</span>
       <span>4명 (BE 2, FE 1, AI 1)</span>
       <span>기여도 50%</span>
+      <span>백엔드</span>
     </div>
     <ul><li><b>기술 스택</b> : <br>Java(Spring Boot), Redis, MySQL, <br>WebSocket, Docker</li></ul>
 
@@ -1458,7 +1505,7 @@ result: {
     'gradu-inha': {
       title: 'Gradu-Inha (졸업 요건 검사 사이트)',
       subtitle: '하이브리드 DB · 졸업 요건 검증 로직',
-      chips: ['2024.09 ~ 2025.03', '5명 (BE 2, FE 2, DESIGN 1)', '기여도 60%'],
+      chips: ['2024.09 ~ 2025.03', '5명 (BE 2, FE 2, 디자이너 1)', '기여도 60%'],
       sections: {
 overview: {
   title: '프로젝트 개요',
@@ -2129,6 +2176,19 @@ document.addEventListener("DOMContentLoaded", () => {
       else item.classList.add("inactive-2");
     });
   }
+  document.querySelectorAll(".project-list-items button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const key = btn.dataset.project;
+    const index = PROJECT_ORDER.indexOf(key);
+
+    if (index === -1) return;
+
+    // clone 포함 후 current 값이 1부터 시작하므로 +1 보정
+    current = index + 1;
+    translate(true);
+    updateClasses();
+  });
+});
 
   /* -----------------------------
      6) 버튼 이동
